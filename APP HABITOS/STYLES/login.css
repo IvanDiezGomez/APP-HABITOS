@@ -1,0 +1,246 @@
+/* ─────────────────────────────────────────────
+   LOGIN.CSS — Inicio de sesión y registro
+   ───────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --rosa-fuerte:   #E8538A;
+  --rosa-medio:    #F2839A;
+  --rosa-suave:    #FAD4E0;
+  --lila:          #C9A7E8;
+  --lila-suave:    #EDE0FA;
+  --melocoton:     #FFC5A8;
+  --crema:         #FFF8F5;
+  --blanco:        #FFFFFF;
+  --texto-oscuro:  #2D1B33;
+  --texto-medio:   #6B4B6E;
+  --texto-suave:   #A07CA8;
+  --sombra-rosa:   0 16px 48px rgba(232, 83, 138, 0.22);
+  --sombra-suave:  0 4px 20px rgba(44, 27, 51, 0.08);
+  --radius-lg:     24px;
+  --radius-md:     12px;
+  --radius-sm:     8px;
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  min-height: 100vh;
+  background: var(--crema);
+  color: var(--texto-oscuro);
+  overflow-x: hidden;
+}
+
+/* Fondo animado con burbujas */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(201, 167, 232, 0.28), transparent 70%);
+  top: -100px;
+  left: -150px;
+  animation: floatBg 12s ease-in-out infinite alternate;
+}
+
+body::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 197, 168, 0.25), transparent 70%);
+  bottom: -80px;
+  right: -100px;
+  animation: floatBg 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatBg {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, 20px) scale(1.08); }
+}
+
+/* ── SHELL ── */
+.auth-shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* ── CARD ── */
+.auth-card {
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(232, 83, 138, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.25rem;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--sombra-rosa);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── HEADER DENTRO DE CARD ── */
+.auth-header {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 0.5rem;
+}
+
+.logo-futurista {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(232, 83, 138, 0.2);
+  padding: 3px;
+  background: var(--rosa-suave);
+}
+
+/* ── TÍTULOS ── */
+.titulo-futurista {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 700;
+  color: var(--texto-oscuro);
+  text-align: center;
+  line-height: 1.25;
+}
+
+.subtitulo-futurista {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--texto-suave);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ── FORM INPUTS ── */
+.form-floating {
+  position: relative;
+}
+
+.form-control.input-futurista,
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  width: 100%;
+  background: rgba(255, 248, 245, 0.8) !important;
+  border: 1.5px solid rgba(201, 167, 232, 0.35) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--texto-oscuro) !important;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-shadow: none !important;
+}
+
+.form-control.input-futurista:focus,
+.auth-form input:focus {
+  border-color: var(--rosa-fuerte) !important;
+  box-shadow: 0 0 0 3px rgba(232, 83, 138, 0.15) !important;
+  outline: none;
+}
+
+.form-floating label {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+/* ── LABELS DEL FORM REGISTRO ── */
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--texto-medio);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* ── BOTONES ── */
+.btn-futurista {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px !important;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+.btn-primary.btn-futurista {
+  background: linear-gradient(135deg, var(--rosa-fuerte), var(--lila));
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(232, 83, 138, 0.35);
+}
+
+.btn-primary.btn-futurista:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(232, 83, 138, 0.45);
+  filter: brightness(1.06);
+}
+
+.btn-primary.btn-futurista:active {
+  transform: translateY(0);
+}
+
+.btn-secondary.btn-futurista,
+.btn-secondary-futurista {
+  background: transparent !important;
+  color: var(--texto-medio) !important;
+  border: 1.5px solid rgba(201, 167, 232, 0.45) !important;
+}
+
+.btn-secondary.btn-futurista:hover {
+  background: rgba(201, 167, 232, 0.1) !important;
+  border-color: var(--lila) !important;
+  color: var(--texto-oscuro) !important;
+}
+
+/* ── FORM GRID REGISTRO ── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.auth-form .col-md-4,
+.auth-form .col-md-6,
+.auth-form .col-12 {
+  width: 100%;
+}
+
+.invalid-feedback {
+  font-size: 0.75rem;
+  color: var(--rosa-fuerte);
+  margin-top: 0.25rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .auth-card { padding: 2rem 1.25rem; border-radius: var(--radius-md); }
+}

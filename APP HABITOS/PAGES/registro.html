@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+   
+        <link rel="stylesheet" href="../STYLES/login.css">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../JS/registro.js" defer></script>
+        <title>REGISTRO</title>
+</head>
+
+<body>
+    <main class="main-futurista auth-shell">
+        <section class="auth-card">
+            <header class="header-full auth-header">
+                <img class="logo-futurista" src="../IMAG/images (1).jfif" alt="Logo" width="70" height="70">
+            </header>
+            <h1 class="titulo-futurista">REGISTRO</h1>
+            <h2 class="subtitulo-futurista">Crea tu cuenta para empezar a seguir tus hábitos</h2>
+
+            <form class="row g-3 auth-form" onsubmit="event.preventDefault(); ;">
+            <div class="col-md-4">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" placeholder="Nombre" required>
+            </div>
+            <div class="col-md-4">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" id="apellido" placeholder="Apellido" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" placeholder="Correo electrónico" aria-describedby="validationServer03Feedback" required>
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                    Por favor ingrese un correo electrónico válido.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="contraseña" class="form-label">Crear una contraseña</label>
+                <input type="password" id="contraseña" placeholder="Contraseña" required>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary btn-futurista" type="submit" onclick=crearUsuario()>ENVIAR</button>
+            </div>
+            <br>
+            <button class="btn btn-secondary btn-futurista" type="button" onclick="window.location.href='login.html'">
+                VOLVER A LOGIN
+            </button>
+        </form>
+        </section>
+    </main>
+
+</body>
+
+</html>

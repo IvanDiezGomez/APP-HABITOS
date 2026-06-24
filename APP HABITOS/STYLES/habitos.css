@@ -1,0 +1,332 @@
+/* ─────────────────────────────────────────────
+   HABITOS.CSS — Lista de hábitos
+   ───────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --rosa-fuerte:   #E8538A;
+  --rosa-medio:    #F2839A;
+  --rosa-suave:    #FAD4E0;
+  --lila:          #C9A7E8;
+  --lila-suave:    #EDE0FA;
+  --melocoton:     #FFC5A8;
+  --verde-menta:   #A8E8C5;
+  --crema:         #FFF8F5;
+  --blanco:        #FFFFFF;
+  --texto-oscuro:  #2D1B33;
+  --texto-medio:   #6B4B6E;
+  --texto-suave:   #A07CA8;
+  --sombra-rosa:   0 8px 32px rgba(232, 83, 138, 0.14);
+  --sombra-suave:  0 2px 12px rgba(44, 27, 51, 0.06);
+  --radius-lg:     20px;
+  --radius-md:     12px;
+  --radius-sm:     8px;
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--crema);
+  color: var(--texto-oscuro);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 5% 0%, rgba(201, 167, 232, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 55% at 95% 100%, rgba(255, 197, 168, 0.16) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(232, 83, 138, 0.10);
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--rosa-fuerte) !important;
+  font-weight: 700;
+}
+
+.nav-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  color: var(--texto-medio) !important;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem !important;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--rosa-fuerte) !important;
+  background: rgba(232, 83, 138, 0.07);
+}
+
+/* ── HEADER ── */
+header {
+  position: relative;
+  z-index: 1;
+}
+
+.header-full {
+  text-align: center;
+  padding: 3.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.titulo-futurista {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--texto-oscuro);
+  line-height: 1.2;
+}
+
+.titulo-futurista::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rosa-fuerte), var(--lila));
+  border-radius: 2px;
+  margin: 0.6rem auto 0;
+}
+
+.logo-futurista {
+  border-radius: 50%;
+  border: 3px solid rgba(232, 83, 138, 0.18);
+  padding: 3px;
+  background: var(--rosa-suave);
+}
+
+/* ── MAIN ── */
+.main-futurista {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── TABLA ── */
+.tabla-futurista-container {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 167, 232, 0.2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+}
+
+.tabla-futurista {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-futurista thead tr {
+  background: linear-gradient(135deg, rgba(232, 83, 138, 0.10), rgba(201, 167, 232, 0.10));
+}
+
+.tabla-futurista th {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--texto-medio);
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(201, 167, 232, 0.18);
+}
+
+.tabla-futurista td {
+  padding: 0.9rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--texto-oscuro);
+  border-bottom: 1px solid rgba(201, 167, 232, 0.10);
+  vertical-align: middle;
+}
+
+.tabla-futurista tbody tr {
+  transition: background 0.2s ease;
+}
+
+.tabla-futurista tbody tr:hover {
+  background: rgba(250, 212, 224, 0.20);
+}
+
+.tabla-futurista tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Checkboxes de "completado" */
+.tabla-futurista input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--rosa-fuerte);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Badges de frecuencia */
+.badge-frecuencia {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: var(--lila-suave);
+  color: #6B3FA0;
+}
+
+.badge-frecuencia.diario  { background: var(--rosa-suave); color: #B8305A; }
+.badge-frecuencia.semanal { background: var(--lila-suave); color: #6B3FA0; }
+
+/* ── SECCIÓN AGREGAR ── */
+.acciones-futurista {
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 167, 232, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  box-shadow: var(--sombra-suave);
+}
+
+.form-control.input-futurista {
+  flex: 1;
+  min-width: 180px;
+  background: rgba(255, 248, 245, 0.9) !important;
+  border: 1.5px solid rgba(201, 167, 232, 0.30) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--texto-oscuro) !important;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 0.65rem 1rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-shadow: none !important;
+}
+
+.form-control.input-futurista::placeholder { color: var(--texto-suave); }
+
+.form-control.input-futurista:focus {
+  border-color: var(--rosa-fuerte) !important;
+  box-shadow: 0 0 0 3px rgba(232, 83, 138, 0.12) !important;
+  outline: none;
+}
+
+.btn-futurista {
+  padding: 0.65rem 1.5rem;
+  border-radius: 50px !important;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--rosa-fuerte), var(--lila)) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 5px 18px rgba(232, 83, 138, 0.30);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-futurista:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 83, 138, 0.42);
+  filter: brightness(1.05);
+}
+
+.btn-futurista:active { transform: translateY(0); }
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(232, 83, 138, 0.08);
+}
+
+.footer-futurista {
+  font-size: 0.76rem;
+  color: var(--texto-suave);
+  letter-spacing: 0.05em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .acciones-futurista { flex-direction: column; }
+  .form-control.input-futurista { min-width: 100%; }
+  .btn-futurista { width: 100%; }
+  .tabla-futurista th, .tabla-futurista td { padding: 0.75rem 0.75rem; font-size: 0.82rem; }
+}
+
+/* ── BOTONES DE ACCIÓN EN TABLA ── */
+.btn-accion {
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-cumplido {
+  background: rgba(168, 232, 197, 0.28);
+  color: #1A7A4A;
+  border: 1px solid rgba(168, 232, 197, 0.55);
+}
+
+.btn-cumplido:hover {
+  background: rgba(168, 232, 197, 0.50);
+  transform: translateY(-1px);
+}
+
+.btn-eliminar {
+  background: var(--rosa-suave);
+  color: #B8305A;
+  border: 1px solid rgba(232, 83, 138, 0.22);
+}
+
+.btn-eliminar:hover {
+  background: rgba(250, 212, 224, 0.80);
+  transform: translateY(-1px);
+}

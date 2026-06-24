@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../STYLES/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JS/login.js" defer></script>
+        <title>LOGIN</title>
+</head>
+ 
+
+<body>
+    <main class="main-futurista auth-shell">
+        <section class="auth-card">
+            <header class="header-full auth-header">
+                <img class="logo-futurista" src="../IMAG/images (1).jfif" alt="Logo" width="70" height="70">
+            </header>
+            <h1 class="titulo-futurista">BIENVENIDOS A TUS SEGUIMIENTOS DE HÁBITOS</h1>
+            <h2 class="subtitulo-futurista">INGRESA TU CORREO Y CONTRASEÑA PARA INICIAR SESIÓN</h2>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control input-futurista" id="email" placeholder="name@example.com">
+                <label for="email">Correo electrónico</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control input-futurista" id="contraseña" placeholder="Password">
+                <label for="contraseña">Contraseña</label>
+            </div>
+            <button type="button" class="btn btn-primary btn-futurista" onclick="iniciarSesion()">ENTRAR</button>
+            <button type="button" class="btn btn-secondary btn-futurista btn-secondary-futurista" id="registrarBtn">REGISTRARSE</button>
+        </section>
+    </main>
+
+</body>
+
+</html>

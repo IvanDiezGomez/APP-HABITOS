@@ -1,0 +1,88 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Iván",
+      "apellido": "Díez Gómez",
+      "email": "ivan@gmail.com",
+      "password": "123456"
+    },
+    {
+      "nombre": "Gio",
+      "apellido": "Martínez",
+      "email": "gio@gmail.com",
+      "id": "8h4AOaQcc2Q",
+      "password": "654321"
+    },
+    {
+      "nombre": "maga",
+      "email": "guerrero@gmail.com",
+      "apellido": "guerrero",
+      "contraseña": "2323",
+      "id": "yb9DbzDntQQ"
+    },
+    {
+      "nombre": "ivan",
+      "email": "gomez@gmail.com",
+      "apellido": "gomez",
+      "contraseña": "1212",
+      "id": "mGSZ_-oJyzY"
+    },
+    {
+      "nombre": "luciana",
+      "email": "luciana@gmail.com",
+      "apellido": "jimenez",
+      "contraseña": "2324",
+      "id": "c52wIFsBjSU"
+    },
+    {
+      "id": "yp7CwY1QZBM",
+      "nombre": "prueba-id",
+      "email": "prueba@example.com",
+      "apellido": "test",
+      "contraseña": "1234"
+    },
+    {
+      "nombre": "prueba-id",
+      "email": "prueba@example.com",
+      "apellido": "test",
+      "contraseña": "1234",
+      "id": "2"
+    },
+    {
+      "id": "QWa4ATL-gzI",
+      "nombre": "pablo",
+      "email": "martinez@gmail.com",
+      "apellido": "martinez",
+      "contraseña": "8989"
+    },
+    {
+      "nombre": "romi",
+      "email": "adminro@gmail.com",
+      "apellido": "ro",
+      "contraseña": "1515",
+      "id": "kDLuL5DX6Cw"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "nombre": "Salud",
+      "color": "#22C55E"
+    }
+  ],
+  "habitos": [
+    {
+      "id": "2",
+      "nombre": "correr",
+      "frecuencia": "diario"
+    },
+    {
+      "id": "KdE2ymxiJxE",
+      "nombre": "comer",
+      "frecuencia": "semanal"
+    }
+  ],
+  "registros": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
